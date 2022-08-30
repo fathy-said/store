@@ -51,105 +51,7 @@ boxProduct.forEach((box) => {
 });
 // pro-shop
 
-// Start-form
 
-    formInput = document.querySelectorAll(".box-form form input");
-    formTextarea = document.querySelector(".box-form form textarea");
-
-    let testName = false;
-    let testEmail = false;
-    let testSubject = false;
-    //
-    // loop-formInput
-
-    formInput.forEach((input) => {
-        input.addEventListener("keyup", (e) => {
-            if (e.target.classList.contains("u-name")) {
-                if (e.target.value.length >= 4) {
-                    e.target.classList.add("active");
-                    e.target.classList.remove("no-active");
-                    e.target.parentElement
-                        .querySelector("h5")
-                        .classList.remove("active");
-                    testName = true;
-                } else {
-                    e.target.classList.remove("active");
-                    e.target.classList.add("no-active");
-                    e.target.parentElement
-                        .querySelector("h5")
-                        .classList.add("active");
-                    testName = false;
-                }
-            }
-            //
-
-            if (e.target.classList.contains("subject")) {
-                if (e.target.value.length >= 4) {
-                    e.target.classList.add("active");
-                    e.target.classList.remove("no-active");
-                    testSubject = true;
-                } else {
-                    e.target.classList.remove("active");
-                    e.target.classList.add("no-active");
-                    testSubject = false;
-                }
-            }
-            //
-
-            //
-
-            if (e.target.classList.contains("u-email")) {
-                const regEmail =
-                    /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-                //
-
-                if (regEmail.test(e.target.value)) {
-                    e.target.classList.add("active");
-                    e.target.classList.remove("no-active");
-                    e.target.parentElement
-                        .querySelector("h5")
-                        .classList.remove("active");
-                    testEmail = true;
-                } else {
-                    e.target.classList.remove("active");
-                    e.target.classList.add("no-active");
-                    e.target.parentElement
-                        .querySelector("h5")
-                        .classList.add("active");
-                    testEmail = false;
-                }
-            }
-
-            // change-button-attribute
-            if (testEmail == true && testName == true&& testSubject==true) {
-                input.parentElement.parentElement
-                    .querySelector("button")
-                    .removeAttribute("disabled");
-            } else {
-                input.parentElement.parentElement
-                    .querySelector("button")
-                    .setAttribute("disabled", "");
-            }
-        });
-    });
-    //
-    // textarea-change
-
-    window.addEventListener("keyup", (e) => {
-        if (e.target.classList.contains("message")) {
-            formTextarea.addEventListener("keyup", (e) => {
-                if (e.target.value.length >= 4) {
-                    e.target.classList.add("active");
-                    e.target.classList.remove("no-active");
-                } else {
-                    e.target.classList.remove("active");
-                    e.target.classList.add("no-active");
-                }
-            });
-        }
-    });
-
-// End-form
 // Start-cart-shop
 let removePurchase = document.querySelectorAll(".boxes .remove-box button");
 // let allBoxPurchase = document.querySelectorAll(".cart-shop .boxes");
@@ -309,3 +211,102 @@ allProductsPg1.forEach((button) => {
         button.setAttribute("disabled", "");
     });
 });
+// Start-form
+
+    formInput = document.querySelectorAll(".box-form form input");
+    formTextarea = document.querySelector(".box-form form textarea");
+
+    let testName = false;
+    let testEmail = false;
+    let testSubject = false;
+    //
+    // loop-formInput
+
+    formInput.forEach((input) => {
+        input.addEventListener("keyup", (e) => {
+            if (e.target.classList.contains("u-name")) {
+                if (e.target.value.length >= 4) {
+                    e.target.classList.add("active");
+                    e.target.classList.remove("no-active");
+                    e.target.parentElement
+                        .querySelector("h5")
+                        .classList.remove("active");
+                    testName = true;
+                } else {
+                    e.target.classList.remove("active");
+                    e.target.classList.add("no-active");
+                    e.target.parentElement
+                        .querySelector("h5")
+                        .classList.add("active");
+                    testName = false;
+                }
+            }
+            //
+
+            if (e.target.classList.contains("subject")) {
+                if (e.target.value.length >= 4) {
+                    e.target.classList.add("active");
+                    e.target.classList.remove("no-active");
+                    testSubject = true;
+                } else {
+                    e.target.classList.remove("active");
+                    e.target.classList.add("no-active");
+                    testSubject = false;
+                }
+            }
+            //
+
+            //
+
+            if (e.target.classList.contains("u-email")) {
+                const regEmail =
+                    /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                //
+
+                if (regEmail.test(e.target.value)) {
+                    e.target.classList.add("active");
+                    e.target.classList.remove("no-active");
+                    e.target.parentElement
+                        .querySelector("h5")
+                        .classList.remove("active");
+                    testEmail = true;
+                } else {
+                    e.target.classList.remove("active");
+                    e.target.classList.add("no-active");
+                    e.target.parentElement
+                        .querySelector("h5")
+                        .classList.add("active");
+                    testEmail = false;
+                }
+            }
+
+            // change-button-attribute
+            if (testEmail == true && testName == true&& testSubject==true) {
+                input.parentElement.parentElement
+                    .querySelector("button")
+                    .removeAttribute("disabled");
+            } else {
+                input.parentElement.parentElement
+                    .querySelector("button")
+                    .setAttribute("disabled", "");
+            }
+        });
+    });
+    //
+    // textarea-change
+
+    window.addEventListener("keyup", (e) => {
+        if (e.target.classList.contains("message")) {
+            formTextarea.addEventListener("keyup", (e) => {
+                if (e.target.value.length >= 4) {
+                    e.target.classList.add("active");
+                    e.target.classList.remove("no-active");
+                } else {
+                    e.target.classList.remove("active");
+                    e.target.classList.add("no-active");
+                }
+            });
+        }
+    });
+
+// End-form
