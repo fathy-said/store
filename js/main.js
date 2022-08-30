@@ -121,7 +121,7 @@ boxProduct.forEach((box) => {
             }
 
             // change-button-attribute
-            if (testEmail == true && testName == true) {
+            if (testEmail == true && testName == true&& testSubject==true) {
                 input.parentElement.parentElement
                     .querySelector("button")
                     .removeAttribute("disabled");
