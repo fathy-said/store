@@ -52,7 +52,7 @@ boxProduct.forEach((box) => {
 // pro-shop
 
 // Start-form
-if (window.Location.href == "contact.html") {
+
     formInput = document.querySelectorAll(".box-form form input");
     formTextarea = document.querySelector(".box-form form textarea");
 
@@ -148,7 +148,6 @@ if (window.Location.href == "contact.html") {
             });
         }
     });
-}
 
 // End-form
 // Start-cart-shop
